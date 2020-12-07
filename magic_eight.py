@@ -29,16 +29,14 @@ ANSWERS = ["It is certain.",
             "Outlook not so good.", 
             "Very doubtful."]
 
-
-random.shuffle(ANSWERS)                                                    # Randomizes the list of the answers for each instance.
-
-
 def usr_input():
-    usr_input = input("\nASK YOUR QUESTION YOU MORTAL: ")
-    return usr_input
+	usr_input = input("\nASK YOUR QUESTION YOU MORTAL: ")
+	return usr_input
 
-for answer in ANSWERS:                                                    # iterates over the randomized list of the answers
-    question = usr_input()
-    print(answer + "\n")
+while True:                                                    # iterates over the randomized list of the answers
+	question = usr_input()
+	if question.lower() == "quit":
+		break
+	print(random.choice(ANSWERS) + "\n")
 
-print("I ran out of answers you lil' bitch, try again.")
+print("See You Later!.")
